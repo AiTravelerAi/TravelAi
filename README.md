@@ -40,7 +40,7 @@ Every prediction and result logged permanently to Solana and IPFS for transparen
 
 ## 🧮 Tokenomics
 
-- **Total Supply**: 420,000,000,000 $TRAVELAI
+- **Total Supply**: 4,200,000,000 $TRAVELAI
 - **Presale**: 50% across 7 stages (11x to 2x bonus)
 - **No staking, no inflation**
 - Instant token delivery on buy
@@ -64,9 +64,8 @@ The team reserves the right to **pause, change, or cancel** the project at any t
 
 ## 📬 Connect With Us
 
-- Telegram: [t.me/TimeTravelerAI](https://t.me/TimeTravelerAI)
-- Twitter/X: [@TimeTravelerAI](https://x.com/TimeTravelerAI)
-- GitHub: [github.com/AiTravelerAi/TravelAI](https://github.com/AiTravelerAi/TravelAI)
+- Telegram: [t.me/TimeTravelerAI](https://t.me/travelthetimeline)
+- Twitter/X: [@TimeTravelerAI](https://x.com/Tra_vel_AI)
 
 Welcome to the future of predictive meme finance.  
 This isn’t just another token — this is **Time. Engineered.**
