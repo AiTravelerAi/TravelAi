@@ -49,7 +49,7 @@ Every prediction and result logged permanently to Solana and IPFS for transparen
 
 ## 🌍 Website & Resources
 
-- 🔗 Website: [https://timetravelerai.ai](https://timetravelerai.ai) (Coming Soon)
+- 🔗 Website:http://travelthetimeline.ai/ 
 - 📖 Whitepaper: `/Whitepaper.pdf` (See repository)
 - 📈 Live Predictions: Coming after Stage 3 launch
 
