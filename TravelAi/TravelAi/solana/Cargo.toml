@@ -1,0 +1,58 @@
+[package]
+name = "travelai-solana"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["AiTravelerAi"]
+description = "TravelAi on-chain program for Solana"
+repository = "https://github.com/AiTravelerAi/TravelAi"
+publish = false
+
+[lib]
+# cdylib is required for Solana SBF (BPF) programs.
+# lib is handy for local unit tests and integration tests with solana-program-test.
+name = "travelai_solana"
+crate-type = ["cdylib", "lib"]
+
+[features]
+# Standard Solana program features; enable/disable as needed in your lib.rs
+default = []
+no-entrypoint = []
+no-idl = []
+cpi = []
+
+[dependencies]
+# Match your installed Solana toolchain major.minor to avoid mismatch errors.
+solana-program = "2.3.7"
+
+# Serialization for instruction/data accounts.
+borsh = { version = "1.5", features = ["derive"] }
+
+# Friendly error derivations for custom program errors.
+thiserror = "1.0"
+
+# If you also use Serde anywhere, uncomment this:
+# serde = { version = "1.0", features = ["derive"] }
+
+[dev-dependencies]
+# Useful for local integration tests (runs a lightweight validator in-process).
+solana-program-test = "2.3.7"
+solana-sdk = "2.3.7"
+anyhow = "1.0"
+
+[profile.release]
+# Make the deployed program as small and fast as possible.
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+overflow-checks = true
+
+[package.metadata.docs.rs]
+# Avoid docs.rs trying to build for sbf, which it can’t.
+targets = ["x86_64-unknown-linux-gnu"]
+
+# Agave/Solana build-sbf respects this block for extra optimization hints.
+[package.metadata.sbf]
+opt = "s"
+
