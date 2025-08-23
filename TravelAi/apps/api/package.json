@@ -1,0 +1,43 @@
+{
+  "name": "@timetravelerai/api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Express API for TimeTravelerAI ($TRAVELAI). Exposes endpoints for signals, drops, pools, and runs weekly cron for Temporal Signal Drops.",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "lint": "eslint . --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "migrate": "prisma migrate dev",
+    "studio": "prisma studio",
+    "cron:run": "ts-node src/cron/publishWeeklyDrop.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.18.0",
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.3",
+    "pg": "^8.13.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.7.4",
+    "eslint": "^8.56.0",
+    "prisma": "^5.18.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
