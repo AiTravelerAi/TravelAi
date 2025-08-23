@@ -1,7 +1,51 @@
 {
   "name": "timetravelerai",
-  "version": "1.0.0",
+  "private": true,
+  "version": "0.1.0",
+  "description": "TimeTravelerAI ($TRAVELAI) monorepo: Anchor program, JS SDK, Next.js web app, Express API, and ML engine placeholder.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AiTravelerAi/TravelAi.git"
+  },
+  "author": "AiTravelerAI",
+  "license": "MIT",
+  "workspaces": [
+    "anchor",
+    "packages/*",
+    "apps/*",
+    "services/*"
+  ],
   "scripts": {
-    "start": "react-scripts start"
+    "dev:web": "turbo run dev --filter=web",
+    "dev:api": "turbo run dev --filter=api",
+    "dev:sdk": "turbo run build --filter=sdk",
+    "dev:ml": "cd services/ml && python src/main.py",
+    "dev:anchor": "cd anchor && anchor build && anchor test",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.2.0",
+    "prettier": "^3.3.3",
+    "turbo": "^2.0.0",
+    "typescript": "^5.6.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "gitleaks": "^8.18.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,md}": [
+      "prettier --write"
+    ],
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
