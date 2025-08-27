@@ -50,8 +50,8 @@ Every prediction and result logged permanently to Solana and IPFS for transparen
 
 ## 🌍 Website & Resources
 
-- 🔗 Website:http://travelthetimeline.ai/ 
-- 📖 Whitepaper: `/Whitepaper.pdf` (See repository)
+- 🔗 Website: www.timetravelerai.com
+- 📖 Whitepaper: www.timetravelerai.com/_files/ugd/36e5cb_0a176d33445b4ac6a8bdb1e6e0cfc474.pdf
 - 📈 Live Predictions: Coming after Stage 3 launch
 
 ---
@@ -65,8 +65,8 @@ The team reserves the right to **pause, change, or cancel** the project at any t
 
 ## 📬 Connect With Us
 
-- Telegram: [t.me/TimeTravelerAI](https://t.me/travelthetimeline)
-- Twitter/X: [@TimeTravelerAI](https://x.com/Tra_vel_AI)
+- Telegram: https://t.me/travelthetimeline)
+- Twitter/X: https://x.com/Tra_vel_AI)
 
 Welcome to the future of predictive meme finance.  
 This isn’t just another token — this is **Time. Engineered.**
