@@ -41,6 +41,7 @@ Every prediction and result logged permanently to Solana and IPFS for transparen
 ## 🧮 Tokenomics
 
 - **Total Supply**: 4,200,000,000 $TRAVELAI
+- **Cotract Address**: QakiKggRFoiNWh84VUm77D7Wr8W2Mv2sKFm2j1PyErp
 - **Presale**: 50% across 7 stages (11x to 2x bonus)
 - **No staking, no inflation**
 - Instant token delivery on buy
