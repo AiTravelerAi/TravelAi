@@ -1,0 +1,35 @@
+{
+  "name": "@timetravelerai/sdk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TypeScript SDK for TimeTravelerAI ($TRAVELAI). Provides helpers for interacting with the Anchor program, Express API, and Temporal Signal Drops.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "idl"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint . --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsc -w"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.95.3",
+    "@project-serum/anchor": "^0.29.0",
+    "axios": "^1.7.7",
+    "bs58": "^6.0.0",
+    "dotenv": "^16.4.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "eslint": "^8.56.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
