@@ -1,3 +1,36 @@
+# Netlify build configuration for TimeTravelerAI ($TRAVELAI)
+
 [build]
-  command = "npm run build"
-  publish = "build"
+  base    = "apps/web"
+  publish = ".next"
+  command = "npm install --legacy-peer-deps && npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# Redirect all routes to Next.js (SSR support)
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/next"
+  status = 200
+
+# Functions directory for Next.js serverless output
+[functions]
+  directory = ".netlify/functions"
+
+# Caching
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  minify = true
+
+[build.processing.js]
+  minify = true
+
+[build.processing.images]
+  compress = true
+
+[build.processing.html]
+  pretty_urls = true
