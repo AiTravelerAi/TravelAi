@@ -1,0 +1,1 @@
+// Signal, Drop, ConfidenceScore, RiskTier

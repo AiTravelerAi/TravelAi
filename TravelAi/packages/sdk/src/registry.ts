@@ -1,0 +1,1 @@
+// initRegistry, get/set config

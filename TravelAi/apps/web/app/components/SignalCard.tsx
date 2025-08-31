@@ -1,0 +1,1 @@
+// SignalCard component

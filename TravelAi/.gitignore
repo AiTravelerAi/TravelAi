@@ -1,0 +1,27 @@
+# Node
+node_modules/
+.env
+.env.*
+dist/
+build/
+coverage/
+.DS_Store
+*.log
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+# VSCode
+.vscode/
+# Anchor
+anchor/target/
+# Terraform
+*.tfstate
+*.tfstate.backup
+# Docker
+*.pid
+# Misc
+*.swp
+*.swo

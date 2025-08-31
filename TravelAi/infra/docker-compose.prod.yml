@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: ../..
+      dockerfile: infra/docker/api.Dockerfile
+    ports:
+      - "3001:3001"
+  web:
+    build:
+      context: ../..
+      dockerfile: infra/docker/web.Dockerfile
+    ports:
+      - "3000:3000"
+  ml:
+    build:
+      context: ../..
+      dockerfile: infra/docker/ml.Dockerfile
+    ports:
+      - "5000:5000"
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../postgres/init.sql:/docker-entrypoint-initdb.d/init.sql

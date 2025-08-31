@@ -1,0 +1,2 @@
+# Example .envrc
+export NODE_ENV=development

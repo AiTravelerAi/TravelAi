@@ -1,0 +1,1 @@
+// Read signals.json & normalize

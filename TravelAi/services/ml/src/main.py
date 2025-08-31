@@ -1,0 +1,1 @@
+# Entrypoint: generate signals.json

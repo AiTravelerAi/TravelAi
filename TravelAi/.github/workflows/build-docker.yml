@@ -1,0 +1,15 @@
+name: Build Docker Images
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build API Docker image
+        run: docker build -f infra/docker/api.Dockerfile .
+      - name: Build Web Docker image
+        run: docker build -f infra/docker/web.Dockerfile .
+      - name: Build ML Docker image
+        run: docker build -f infra/docker/ml.Dockerfile .

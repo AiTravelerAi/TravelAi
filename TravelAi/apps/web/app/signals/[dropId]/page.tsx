@@ -1,0 +1,1 @@
+// Signal drop details
