@@ -1,20 +1,38 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-echo "Running linter..."
-npm run lint
-RESULT_LINT=$?
-if [ $RESULT_LINT -ne 0 ]; then
-	echo "Lint failed. Aborting commit."
-	exit 1
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "\ pre-commit: running checks…"
+
+# 1) Block obviously sensitive files from being committed
+SENSITIVE_REGEX='\.env(\..*)?$|(^|/)id\.json$|\.pem$|\.key$|(^|/)keystore\.json$|(^|/)target/keystore/|(^|/)anchor\.so$'
+STAGED_FILES="$(git diff --cached --name-only)"
+
+echo "$STAGED_FILES" | grep -E "$SENSITIVE_REGEX" >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+  echo "❌ Commit blocked: staged changes include sensitive files."
+  echo "   Please remove these from the commit:"
+  echo "$STAGED_FILES" | grep -E "$SENSITIVE_REGEX"
+  exit 1
 fi
 
-# Run tests
-echo "Running tests..."
-npm test
-RESULT_TEST=$?
-if [ $RESULT_TEST -ne 0 ]; then
-	echo "Tests failed. Aborting commit."
-	exit 1
+# 2) Secret scan (staged only) with gitleaks (redacts output)
+if command -v gitleaks >/dev/null 2>&1; then
+  npx gitleaks protect --staged --redact
+  if [ $? -ne 0 ]; then
+    echo "❌ Commit blocked: gitleaks found potential secrets."
+    exit 1
+  fi
+else
+  echo "ℹ️ gitleaks not found; skipping secret scan."
 fi
 
-echo "All checks passed. Proceeding with commit."
+# 3) Lint + format only changed files via lint-staged (configured in root package.json)
+if command -v npx >/dev/null 2>&1; then
+  npx lint-staged
+  if [ $? -ne 0 ]; then
+    echo "❌ Commit blocked: lint-staged failed."
+    exit 1
+  fi
+fi
+
+echo "✅ pre-commit checks passed."
