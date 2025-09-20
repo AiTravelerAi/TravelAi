@@ -1,4 +1,13 @@
 [workspace]
 members = [
-  "programs/time_traveler"
+    "programs/time_traveler"
 ]
+
+[profile.release]
+# Optimize for smaller, deterministic builds on-chain
+opt-level = "s"
+lto = true
+codegen-units = 1
+debug = false
+panic = "abort"
+overflow-checks = true
