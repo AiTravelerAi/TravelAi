@@ -1,2 +1,29 @@
+[workspace]
+members = [
+    "programs/time_traveler"
+]
+
+[provider]
+# Local devnet or test validator for `anchor test`
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
 [programs.localnet]
-time_traveler = "<PROGRAM_ID>"
+time_traveler = "time_travel111111111111111111111111111111111"
+
+[programs.devnet]
+time_traveler = "time_travel222222222222222222222222222222222"
+
+[programs.mainnet]
+time_traveler = "time_travel333333333333333333333333333333333"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.spec.ts"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[features]
+seeds = true
+skip-lint = false
+
